@@ -172,7 +172,7 @@ origins = [
     origin.strip()
     for origin in os.getenv(
         "ALLOWED_ORIGINS",
-        "http://localhost:4200,http://127.0.0.1:4200",
+        "https://s-ai-portfolio.netlify.app/",
     ).split(",")
     if origin.strip()
 ]
