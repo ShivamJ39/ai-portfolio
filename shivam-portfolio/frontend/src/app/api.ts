@@ -53,6 +53,8 @@ export class PortfolioApi {
 
   // For a separate deployed backend, use its HTTPS address plus /api.
   private readonly baseUrl = '/api';
+  
+  private readonly chatUrl = 'https://portfolio-backend-zyql.onrender.com/api/chat';
   private readonly contactUrl = 'https://portfolio-contact-api.shivam-api.workers.dev/api/contact';
   chat(
     message: string,
@@ -60,7 +62,7 @@ export class PortfolioApi {
     history: ChatTurn[],
   ): Promise<ChatReply> {
     return firstValueFrom(
-      this.http.post<ChatReply>(`${this.baseUrl}/chat`, {
+      this.http.post<ChatReply>(this.chatUrl, {
         message,
         current_page: currentPage,
         history,
