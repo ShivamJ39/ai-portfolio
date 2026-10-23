@@ -1,0 +1,79 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { firstValueFrom, timeout } from 'rxjs';
+
+export const PAGE_PATHS = [
+  '/',
+  '/about',
+  '/projects',
+  '/skills',
+  '/contact',
+  '/projects#pdf-assistant',
+  '/projects#portfolio-assistant',
+] as const;
+
+export type PagePath = (typeof PAGE_PATHS)[number];
+
+export interface ChatTurn {
+  role: 'user' | 'model';
+  content: string;
+}
+
+export interface ChatReply {
+  answer: string;
+  route: PagePath | null;
+  navigate: boolean;
+}
+
+export interface ContactPayload {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export function errorMessage(error: unknown): string {
+  if (error instanceof HttpErrorResponse) {
+    if (error.status === 429) {
+      return 'Too many requests. Please wait a minute and try again.';
+    }
+
+    const detail = error.error?.detail;
+
+    if (typeof detail === 'string') {
+      return detail;
+    }
+  }
+
+  return 'Unable to complete the request. Please try again.';
+}
+
+@Injectable({ providedIn: 'root' })
+export class PortfolioApi {
+  private readonly http = inject(HttpClient);
+
+  // For a separate deployed backend, use its HTTPS address plus /api.
+  private readonly baseUrl = '/api';
+
+  chat(
+    message: string,
+    currentPage: PagePath,
+    history: ChatTurn[],
+  ): Promise<ChatReply> {
+    return firstValueFrom(
+      this.http.post<ChatReply>(`${this.baseUrl}/chat`, {
+        message,
+        current_page: currentPage,
+        history,
+      }).pipe(timeout(45_000)),
+    );
+  }
+
+  contact(payload: ContactPayload): Promise<{ message: string }> {
+    return firstValueFrom(
+      this.http.post<{ message: string }>(
+        `${this.baseUrl}/contact`,
+        payload,
+      ).pipe(timeout(25_000)),
+    );
+  }
+}
