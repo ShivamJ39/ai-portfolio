@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
 import { map } from 'rxjs';
 
 import { PortfolioApi, errorMessage } from './api';
@@ -253,11 +253,10 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
 
                 <p>
                   <a
-                    class="text-link"
-                    href="mailto:shivamjadhav1239@gmail.com"
-                   // [href]="safeMailtoUrl"
+                      class="text-link"
+                          href="mailto:shivamjadhav1239@gmail.com"
                   >
-                    {{ contactEmail }}
+                  Email
                   </a>
                 </p>
               </div>
@@ -334,19 +333,16 @@ export class PageComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly api = inject(PortfolioApi);
   private readonly fb = inject(NonNullableFormBuilder);
-  private readonly sanitizer = inject(DomSanitizer);
+  
 
   readonly page = toSignal(
     this.route.data.pipe(map(data => data['page'] as PageName)),
     { initialValue: 'home' as PageName },
   );
 
-  readonly contactEmail = 'shivamjadhav1239@gmail.com';
+  
 
-  get safeMailtoUrl(): SafeUrl {
-    return this.sanitizer.bypassSecurityTrustUrl(`mailto:${this.contactEmail}`);
-  }
-
+  
   readonly sending = signal(false);
   readonly contactStatus = signal('');
   readonly contactFailed = signal(false);
