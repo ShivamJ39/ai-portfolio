@@ -314,7 +314,7 @@ export class PageComponent {
     { initialValue: 'home' as PageName },
   );
 
-  readonly contactEmail = 'shivam@example.com';
+  readonly contactEmail = 'shivamjadhav1239@gmail.com';
 
   readonly sending = signal(false);
   readonly contactStatus = signal('');
