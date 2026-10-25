@@ -254,7 +254,8 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                 <p>
                   <a
                     class="text-link"
-                    [href]="safeMailtoUrl"
+                    href="mailto:shivamjadhav1239@gmail.com"
+                   // [href]="safeMailtoUrl"
                   >
                     {{ contactEmail }}
                   </a>
