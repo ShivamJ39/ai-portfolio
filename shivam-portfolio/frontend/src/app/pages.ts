@@ -230,7 +230,8 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
 
                 <a
                   class="text-link"
-                  [href]="'mailto:' + contactEmail"
+                  [href]="'mailto:' + contactEmail
+                  (click)="$event.stopPropagation()"
                 >
                   {{ contactEmail }}
                 </a>
