@@ -232,7 +232,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                 <p>
                   <a
                     class="text-link"
-                    href="www.linkedin.com/in/shivam-jadhav-41769a283"
+                    href="https://www.linkedin.com/in/shivam-jadhav-41769a283"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
