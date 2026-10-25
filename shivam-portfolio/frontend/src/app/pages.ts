@@ -251,15 +251,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                   </a>
                 </p>
 
-                <p>
-                  <a
-                      class="text-link"
-                          href="mailto:shivamjadhav1239@gmail.com"
-                          (click)="openEmail($event)"
-                  >
-                  Email
-                  </a>
-                </p>
+                
               </div>
             </div>
 
@@ -343,13 +335,7 @@ export class PageComponent {
 
   
 
-  openEmail(event: MouseEvent): void {
-  // Prevent Angular router or default async link processing from intercepting
-  event.preventDefault();
-  
-  // Trigger standard mail client synchronously inside user gesture
-  window.location.href = 'mailto:shivamjadhav1239@gmail.com';
-}
+ 
   readonly sending = signal(false);
   readonly contactStatus = signal('');
   readonly contactFailed = signal(false);
