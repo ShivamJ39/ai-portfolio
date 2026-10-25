@@ -164,22 +164,31 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                   }
                 </div>
 
-                <a
-                  class="text-link"
-                  href="https://github.com/ShivamJ39"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore my GitHub ↗
-                </a>
-                 <a
-                  class="text-link"
-                  href="https://github.com/ShivamJ39"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore my GitHub ↗
-                </a>
+                <div class="project-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <!-- GitHub Repository Link -->
+            @if (project.githubUrl) {
+              <a
+                class="text-link"
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repo ↗
+              </a>
+            }
+
+            <!-- Live Demo Link -->
+            @if (project.liveUrl) {
+              <a
+                class="text-link"
+                [href]="project.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo ↗
+              </a>
+            }
+          </div>
               </article>
             }
           </div>
@@ -383,6 +392,8 @@ export class PageComponent {
         'Render backend and Netlify frontend deployment',
       ],
       technologies: ['Python', 'FastAPI', 'FAISS', 'Gemini', 'JavaScript'],
+      githubUrl: 'https://github.com/ShivamJ39/ai-pdf-assistant', 
+      liveUrl: 'https://ai-pdf-assistant.netlify.app',
     },
     {
       id: 'portfolio-assistant',
@@ -398,6 +409,8 @@ export class PageComponent {
         'FastAPI backend with structured Gemini responses',
       ],
       technologies: ['Angular', 'FastAPI', 'Gemini', 'TypeScript'],
+      githubUrl: 'https://github.com/ShivamJ39/ai-portfolio',
+      liveUrl: 'https://s-ai-portfolio.netlify.app',
     },
   ];
 
