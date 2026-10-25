@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { map } from 'rxjs';
 
 import { PortfolioApi, errorMessage } from './api';
@@ -228,13 +229,36 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                   </a>
                 </p>
 
-                <a
-                  class="text-link"
-                  [href]="'mailto:' + contactEmail
-                  (click)="$event.stopPropagation()"
-                >
-                  {{ contactEmail }}
-                </a>
+                <p>
+                  <a
+                    class="text-link"
+                    href="https://www.linkedin.com/in/shivamj39"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn ↗
+                  </a>
+                </p>
+
+                <p>
+                  <a
+                    class="text-link"
+                    href="https://www.instagram.com/shivamj39"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram ↗
+                  </a>
+                </p>
+
+                <p>
+                  <a
+                    class="text-link"
+                    [href]="safeMailtoUrl"
+                  >
+                    {{ contactEmail }}
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -309,6 +333,7 @@ export class PageComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly api = inject(PortfolioApi);
   private readonly fb = inject(NonNullableFormBuilder);
+  private readonly sanitizer = inject(DomSanitizer);
 
   readonly page = toSignal(
     this.route.data.pipe(map(data => data['page'] as PageName)),
@@ -316,6 +341,10 @@ export class PageComponent {
   );
 
   readonly contactEmail = 'shivamjadhav1239@gmail.com';
+
+  get safeMailtoUrl(): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(`mailto:${this.contactEmail}`);
+  }
 
   readonly sending = signal(false);
   readonly contactStatus = signal('');
