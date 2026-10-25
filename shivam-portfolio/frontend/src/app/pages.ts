@@ -172,6 +172,14 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
                 >
                   Explore my GitHub ↗
                 </a>
+                 <a
+                  class="text-link"
+                  href="https://github.com/ShivamJ39"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Explore my GitHub ↗
+                </a>
               </article>
             }
           </div>
