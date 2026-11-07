@@ -399,7 +399,7 @@ export class PageComponent {
       id: 'portfolio-assistant',
       symbol: 'AI ✦',
       category: 'AI · CONVERSATIONAL EXPERIENCE',
-      name: 'Portfolio AI Chatbot',
+      name: 'Portfolio With Intigrated AI',
       description:
         'A conversational portfolio guide helping visitors explore projects, skills, and contact information.',
       features: [
