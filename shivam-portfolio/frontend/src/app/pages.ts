@@ -107,7 +107,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
               <p>
                 I'm Shivam, a full-stack developer and AI systems
                 engineer working with Python, JavaScript, and
-                modern AI tooling.Currenly pursuing MCA.
+                modern AI tooling. Currenly pursuing MCA.
               </p>
               <p>
                 I enjoy connecting application interfaces with
