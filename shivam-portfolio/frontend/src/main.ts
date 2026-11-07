@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: PageComponent,
-    title: 'Shivam | Full-Stack Developer & AI Engineer',
+    title: 'Shivam | Full-Stack Development & AI Engineering,
     data: { page: 'home' },
   },
   {
