@@ -107,7 +107,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
               <p>
                 I'm Shivam, a full-stack developer and AI systems
                 engineer working with Python, JavaScript, and
-                modern AI tooling.
+                modern AI tooling.Currenly pursuing MCA.
               </p>
               <p>
                 I enjoy connecting application interfaces with
@@ -393,7 +393,7 @@ export class PageComponent {
       ],
       technologies: ['Python', 'FastAPI', 'FAISS', 'Gemini', 'JavaScript'],
       githubUrl: 'https://github.com/ShivamJ39/ai-pdf-assistant', 
-      liveUrl: 'https://ai-pdf-assistant.netlify.app',
+      liveUrl: 'https://s-ai-pdf.netlify.app',
     },
     {
       id: 'portfolio-assistant',
