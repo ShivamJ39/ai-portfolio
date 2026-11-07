@@ -30,7 +30,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
             </h1>
 
             <p class="lead">
-              Full-stack developer and AI systems engineer building
+              Full-stack Development and AI systems engineering building
               useful web experiences, reliable APIs, and intelligent tools.
             </p>
 
@@ -105,8 +105,8 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
             <article class="card">
               <h2>My approach</h2>
               <p>
-                I'm Shivam, a full-stack developer and AI systems
-                engineer working with Python, JavaScript, and
+                I'm Shivam, I am doing full-stack development and AI systems
+                engineering with Python, JavaScript, and
                 modern AI tooling. Currenly pursuing MCA.
               </p>
               <p>
