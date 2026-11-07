@@ -122,7 +122,7 @@ interface ChatMessage {
         </form>
 
         <div class="chat-footer">
-          <span>AI answers may need verification.</span>
+          <span>Sometimes first response take 30 to 40 sec due to render free web srevice </span>
 
           <button
             type="button"
