@@ -71,7 +71,8 @@ PROJECTS:
 2. Portfolio AI Chatbot:
    - FastAPI-powered assistant for portfolio visitors and recruiters.
 
-EXPERIENCE:
+EDUCATION AND EXPERIENCE:
+- Currently pursuing deggre in MCA From VGU Jaipur and in second sem
 - RESTful API design.
 - Rate-limiting strategies.
 - Serverless and microservice deployments.
