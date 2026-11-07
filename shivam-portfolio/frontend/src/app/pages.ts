@@ -425,7 +425,7 @@ export class PageComponent {
     },
     {
       name: 'AI & delivery',
-      skills: ['FAISS', 'Gemini API', 'RAG', 'Docker', 'Git'],
+      skills: ['FAISS', 'Gemini API', 'RAG', 'Git','Render','Netlify'],
     },
   ];
 
