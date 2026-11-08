@@ -192,13 +192,8 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
 
       @case ('skills') {
         <section class="section">
-          <p class="eyebrow">MY TOOLKIT</p>
-          <h1>The tools behind the work.</h1>
-          <p class="lead">
-            Technologies I use across application development,
-            AI systems, and deployment.
-          </p>
-
+          <p class="eyebrow">MY SKILLS</p>
+          
           <div class="grid three">
             @for (group of skillGroups; track group.name) {
               <article class="card">
