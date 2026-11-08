@@ -99,8 +99,7 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
       @case ('about') {
         <section class="section">
           <p class="eyebrow">ABOUT ME</p>
-          <h1>Curious about problems.<br>Focused on building.</h1>
-
+         
           <div class="grid two">
             <article class="card">
               <h2>My approach</h2>
