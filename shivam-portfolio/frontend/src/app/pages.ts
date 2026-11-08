@@ -133,12 +133,8 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
 
       @case ('projects') {
         <section class="section">
-          <p class="eyebrow">SELECTED WORK</p>
-          <h1>Projects with a purpose.</h1>
-          <p class="lead">
-            A selection of applications connecting thoughtful
-            interfaces, backend engineering, and AI.
-          </p>
+          <p class="eyebrow">My Projects</p>
+          
 
           <div class="grid two">
             @for (project of projects; track project.id) {
