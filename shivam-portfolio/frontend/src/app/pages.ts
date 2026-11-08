@@ -212,15 +212,12 @@ type PageName = 'home' | 'about' | 'projects' | 'skills' | 'contact';
 
       @case ('contact') {
         <section class="section">
-          <p class="eyebrow">GET IN TOUCH</p>
-          <h1>Let's build something useful.</h1>
+          <p class="eyebrow">CONTACT ME</p>
+         
 
           <div class="grid two">
             <div>
-              <p class="lead">
-                Have a project, a question, or an opportunity?
-                Send me a message.
-              </p>
+             
 
               <div class="card">
                 <h2>Find me online</h2>
